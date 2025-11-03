@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Vitória 💖</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    color: #4b2e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .contador {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #d81b60;
+    font-weight: bold;
+  }
+  .hearts {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff4081;
+    transform: rotate(45deg);
+    animation: float 6s infinite;
+    opacity: 0.8;
+  }
+  @keyframes float {
+    0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+    50% { transform: translateY(-300px) rotate(45deg); opacity: 0.4; }
+    100% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+  }
+</style>
+</head>
+<body>
+
+<h1>💖 Para minha princesa Vitória 💖</h1>
+<p>Vitória, desde o dia 02/10/2025, nossa história começou a ser escrita — e eu tenho certeza que será pra sempre. 💞<br>
+A nossa primeira conversa sempre vai ser única, porque foi ali que tudo começou… foi ali que eu percebi que quero você comigo pro resto da minha vida. Eu sei que o passado já te machucou muito, e que nem sempre foi fácil. Mas agora, Deus te deu uma nova oportunidade — uma chance de esquecer as dores e viver algo verdadeiro, algo que te faça sorrir de verdade. E essa oportunidade é nós dois. 💫<br>
+Eu te amo, Vitória. 💖 Você é uma pessoa incrível, com um coração lindo, e eu quero que saiba que quero ser o seu último amor. A vida pode até colocar desafios no nosso caminho, mas a gente vai vencer tudo junto, porque o nosso amor é muito maior do que qualquer obstáculo. 💪❤️ Te amo, minha pequena, pra sempre. 💕</p>
+
+<div class="contador" id="contador">Dias juntos: 0</div>
+
+<audio src="https://www.dropbox.com/s/xyz123/AllNight.mp3?dl=1" autoplay loop></audio>
+
+<script>
+  function atualizarContador() {
+    const dataInicio = new Date('2025-10-02');
+    const agora = new Date();
+    const diferenca = agora - dataInicio;
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    document.getElementById('contador').innerText = `Dias juntos: ${dias}`;
+  }
+  atualizarContador();
+  setInterval(atualizarContador, 1000 * 60 * 60);
+
+  // Corações flutuantes
+  for(let i=0; i<50; i++) {
+    let heart = document.createElement('div');
+    heart.className = 'hearts';
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.animationDuration = (3 + Math.random()*3) + 's';
+    document.body.appendChild(heart);
+  }
+</script>
+
+</body>
+</html>
